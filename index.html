@@ -58,7 +58,7 @@
 			uniform vec3 e8;
 			uniform vec3 e9;
 			
-			float distance(vec2 p1, vec2 p2)
+			float interval(vec2 p1, vec2 p2)
 			{
 				float dx = p1.x-p2.x;
 				float dy = p1.y-p2.y;
@@ -73,7 +73,7 @@
 				
 				vec2 ep = -1.0 + 2.0 * e.xy / resolution.xy;
 				
-				float dist = ( 1.0 - min( distance( ep, p ) * 2.0, 1.0 ) );
+				float dist = ( 1.0 - min( interval( ep, p ) * 2.0, 1.0 ) );
 				
 				return dist * 0.3 * e.z;
 			}
@@ -86,7 +86,7 @@
 				
 				vec2 ep = -1.0 + 2.0 * e.xy / resolution.xy;
 				
-				float dist = ( 1.0 - min( distance( ep, p ) * 2.0, 1.0 ) );
+				float dist = ( 1.0 - min( interval( ep, p ) * 2.0, 1.0 ) );
 				
 				float a = atan(p.y-ep.y,p.x-ep.x);
 				float r = sqrt(dot(p-ep,p-ep));
@@ -115,7 +115,7 @@
 				light += lightEffect( e7, p );
 				light += lightEffect( e8, p );
 				light += lightEffect( e9, p );
-				light += ( 1.0 - ( distance( m, p ) ) ) * 0.08;
+				light += ( 1.0 - ( interval( m, p ) ) ) * 0.08;
 				light = min( light, 1.0 );
 				
 			 	vec2 uv = pos;
