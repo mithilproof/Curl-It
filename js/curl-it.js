@@ -24,7 +24,7 @@ var Curl_It = (function() {
     ENEMY_SIZE = 10;
 
     // The height of the header / status bar
-    var HEADER_HEIGHT = 70;
+    var HEADER_HEIGHT = 50;
 
     var MENU_FADE_IN_DURATION = 600,
         MENU_FADE_OUT_DURATION = 600;
